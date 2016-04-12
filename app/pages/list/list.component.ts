@@ -11,6 +11,9 @@ import {setHintColor} from "../../utils/hint-util";
 
 var socialShare = require("nativescript-social-share");
 
+import { registerElement } from "nativescript-angular/element-registry";
+registerElement("PullToRefresh", () => require("nativescript-pulltorefresh").PullToRefresh);
+
 @Component({
   selector: "list",
   templateUrl: "pages/list/list.html",
@@ -31,10 +34,16 @@ export class ListPage implements OnInit {
   }
 
   ngOnInit() {
+    this.load();
+  }
+
+  load() {
     this._groceryListService.load()
       .subscribe(loadedGroceries => {
         loadedGroceries.forEach((groceryObject) => {
           this.groceryList.unshift(groceryObject);
+          var pullToRefresh = <any>topmost().currentPage.getViewById("pull-to-refresh");
+          pullToRefresh.refreshing = false;
         });
       });
   }
@@ -81,5 +90,12 @@ export class ListPage implements OnInit {
     }
     var listString = list.join(", ").trim();
     socialShare.shareText(listString);
+  }
+
+  refreshList() {
+    while (this.groceryList.length) {
+      this.groceryList.pop();
+    }
+    this.load();
   }
 }
