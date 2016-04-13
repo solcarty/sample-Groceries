@@ -8,7 +8,7 @@ import {ListPage} from "./pages/list/list.component";
 @Component({
   selector: "main",
   directives: [NS_ROUTER_DIRECTIVES],
-  template: "<StackLayout><page-router-outlet></page-router-outlet></StackLayout>"
+  template: "<page-router-outlet></page-router-outlet>"
 })
 @RouteConfig([
   { path: "/Login", component: LoginPage, as: "Login", useAsDefault: true },
