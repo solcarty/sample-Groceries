@@ -11,7 +11,7 @@ import {ListPage} from "./pages/list/list.component";
   template: "<page-router-outlet></page-router-outlet>"
 })
 @RouteConfig([
-  { path: "/Login", component: LoginPage, as: "Login", useAsDefault: true },
-  { path: "/List", component: ListPage, as: "List" }
+  { path: "/Login", component: LoginPage, name: "Login", useAsDefault: true },
+  { path: "/List", component: ListPage, name: "List" }
 ])
 export class AppComponent {}
