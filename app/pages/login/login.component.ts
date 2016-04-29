@@ -4,4 +4,4 @@ import {Component} from "angular2/core";
   selector: "login",
   template: "<Label text='Hello NativeScript'></Label>"
 })
-export class LoginPage {}
+export class LoginComponent {}

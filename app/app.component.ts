@@ -2,16 +2,16 @@ import {Component} from "angular2/core";
 import {RouteConfig} from "angular2/router";
 import {NS_ROUTER_DIRECTIVES} from "nativescript-angular/router";
 
-import {LoginPage} from "./pages/login/login.component";
-import {ListPage} from "./pages/list/list.component";
+import {LoginComponent} from "./pages/login/login.component";
+import {ListComponent} from "./pages/list/list.component";
 
 @Component({
   selector: "main",
-  directives: [NS_ROUTER_DIRECTIVES],
-  template: "<page-router-outlet></page-router-outlet>"
+  template: "<page-router-outlet></page-router-outlet>",
+  directives: [NS_ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-  { path: "/Login", component: LoginPage, name: "Login", useAsDefault: true },
-  { path: "/List", component: ListPage, name: "List" }
+  { path: "/Login", name: "Login", component: LoginComponent, useAsDefault: true },
+  { path: "/List", name: "List", component: ListComponent }
 ])
 export class AppComponent {}

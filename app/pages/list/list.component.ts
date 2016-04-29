@@ -20,7 +20,7 @@ registerElement("PullToRefresh", () => require("nativescript-pulltorefresh").Pul
   providers: [GroceryListService],
   styleUrls: ["pages/list/list-common.css", "pages/list/list.css"]
 })
-export class ListPage implements OnInit {
+export class ListComponent implements OnInit {
   groceryList: Array<Grocery> = [];
   grocery: string;
   isLoading: boolean;
