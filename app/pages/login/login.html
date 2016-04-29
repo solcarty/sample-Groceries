@@ -1,6 +1,6 @@
 <GridLayout>
 
-  <GridLayout id="background" scaleX="1.6" scaleY="1.6"></GridLayout>
+  <GridLayout id="background" class="scaleDown"></GridLayout>
 
   <StackLayout id="container" height="350">
     <Image [src]="isLoggingIn ? 'res://logo_login' : 'res://logo_signup'" id="logo" stretch="none" horizontalAlignment="center"></Image>
@@ -8,7 +8,7 @@
     <TextField [(ngModel)]="user.email" id="email" hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none" [color]="isLoggingIn ? 'black' : 'white'"></TextField>
     <TextField [(ngModel)]="user.password" id="password" secure="true" hint="Password" [color]="isLoggingIn ? 'black' : 'white'"></TextField>
 
-    <Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'" id="submit-button" (tap)="submit()"></Button>
+    <Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'" id="submit-button" (tap)="login()"></Button>
     <Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
   </StackLayout>
 
