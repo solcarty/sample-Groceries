@@ -9,14 +9,14 @@
     <Image src="res://add" id="add-image" (tap)="add()" col="1"></Image>
   </GridLayout>
 
-  <PullToRefresh id="pull-to-refresh" row="1" (refresh)="refreshList()">
-    <StackLayout>
+  <PullToRefresh row="1" id="pull-to-refresh" (refresh)="refreshList()">
+    <ScrollView>
       <ListView [items]="groceryList" class="small-spacing">
-        <template #item="item">
+        <template let-item="item">
           <Label [text]="item.name" class="medium-spacing"></Label>
         </template>
       </ListView>
-    </StackLayout>
+    </ScrollView>
   </PullToRefresh>
 
 </GridLayout>
