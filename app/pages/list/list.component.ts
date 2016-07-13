@@ -1,5 +1,5 @@
 import {Component, ChangeDetectionStrategy, OnInit} from "@angular/core";
-import {Router} from "@angular/router-deprecated";
+import {Router} from "@angular/router";
 import {EventData} from "data/observable";
 import {alert} from "ui/dialogs";
 import {TextField} from "ui/text-field";
