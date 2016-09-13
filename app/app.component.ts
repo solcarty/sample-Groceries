@@ -1,9 +1,7 @@
-import {Component} from "@angular/core";
-import {NS_ROUTER_DIRECTIVES} from "nativescript-angular/router";
+import { Component } from "@angular/core";
 
 @Component({
-  selector: "main",
-  directives: [NS_ROUTER_DIRECTIVES],
+  selector: "gr-main",
   template: "<page-router-outlet></page-router-outlet>"
 })
 export class AppComponent {}

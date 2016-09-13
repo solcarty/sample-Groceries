@@ -1,13 +1,7 @@
-import {RouterConfig} from "@angular/router";
-import {nsProvideRouter} from "nativescript-angular/router"
-import {LoginComponent} from "./pages/login/login.component";
-import {ListComponent} from "./pages/list/list.component";
+import { Routes } from "@angular/router";
 
-export const routes: RouterConfig = [
-  { path: "", component: LoginComponent },
-  { path: "list", component: ListComponent }
-];
+import { LoginComponent } from "./pages/login/login.component";
 
-export const APP_ROUTER_PROVIDERS = [
-  nsProvideRouter(routes, {})
+export const appRoutes: Routes = [
+  { path: "", component: LoginComponent }
 ];
