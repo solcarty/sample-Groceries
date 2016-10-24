@@ -107,6 +107,7 @@ export class GroceryService {
   }
 
   permanentlyDelete(item: Grocery) {
+    console.log("ummm");
     return this.http
       .delete(
         BackendService.apiUrl + "Groceries/" + item.id,
@@ -114,6 +115,10 @@ export class GroceryService {
       )
       .map(res => res.json())
       .map(data => {
+        console.log("ok");
+        let index = this.allItems.indexOf(item);
+        console.log(index);
+        this.allItems.splice(index, 1);
         this.publishUpdates();
       })
       .catch(this.handleErrors);

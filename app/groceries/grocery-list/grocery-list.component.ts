@@ -76,6 +76,8 @@ export class GroceryListComponent {
       this.loaded.next("");
     }
 
+    console.log("which");
+    console.log(grocery.deleted);
     if (grocery.deleted) {
       this.store.permanentlyDelete(grocery)
         .subscribe(successHandler, errorHandler);

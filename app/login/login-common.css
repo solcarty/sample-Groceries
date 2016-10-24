@@ -58,11 +58,11 @@ Button, TextField {
 }
 TextField {
   color: black;
-  placeholder-color: #ACA6A7;
+  /* placeholder-color: #ACA6A7; */
 }
 TextField.light {
   color: #C4AFB4;
-  placeholder-color: #C4AFB4;
+  /* placeholder-color: #C4AFB4; */
 }
 .submit-button {
   background-color: #CB1D00;
