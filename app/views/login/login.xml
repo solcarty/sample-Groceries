@@ -1,16 +1,13 @@
 <Page loaded="loaded">
-    <Page.actionBar>
-        <ActionBar title="Sign in"></ActionBar>
-    </Page.actionBar>
-    <StackLayout orientation="vertical">
+  <FlexboxLayout flexDirection="column" alignItems="center" justifyContent="center">
+    <StackLayout id="container">
+      <Image src="res://logo_login" stretch="none" horizontalAlignment="center"></Image>
 
-        <Image src="res://logo" stretch="none" horizontalAlignment="center" />
+      <TextField id="email" text="{{ email }}" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
+      <TextField id="password" secure="true" text="{{ password }}" hint="Password" />
 
-        <TextField id="email" text="{{ email }}" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
-        <TextField secure="true" text="{{ password }}" hint="Password" />
-
-        <Button text="Sign in" tap="signIn" />
-        <Button text="Sign up for Groceries" class="link" tap="register" />
-
+      <Button text="Sign in" tap="submit" class="submit-button" />
+      <Button text="Sign up for Groceries" class="link" tap="toggleDisplay" />
     </StackLayout>
+  </FlexboxLayout>
 </Page>
