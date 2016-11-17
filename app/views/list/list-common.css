@@ -14,17 +14,17 @@ ListView {
   padding: 5 10;
 }
 .add-bar Image {
-  height: 15;
+  height: 20;
   vertical-align: center;
   margin-left: 10;
   margin-right: 5;
 }
 TextField {
   color: white;
+  padding-left: 5;
 }
 .delete-container {
-  background-color: #CB1D00;
   padding: 5;
-  height: 20;
-  margin-right: 8;
+  margin-right: 5;
+  height: 30;
 }

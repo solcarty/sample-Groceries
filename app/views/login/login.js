@@ -11,6 +11,7 @@ var isLoggingIn = true;
 
 exports.loaded = function(args) {
   page = args.object;
+  page.backgroundImage = page.ios ? "res://bg_login.jpg" : "res://bg_login";
   page.actionBarHidden = true;
   page.bindingContext = user;
 };
