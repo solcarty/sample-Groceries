@@ -7,12 +7,12 @@ var setHintColor = require("../../shared/utils/hint-util").setHintColor;
 
 var user = new UserViewModel();
 var page;
-var isLoggingIn = true;
 
 exports.loaded = function(args) {
   page = args.object;
   page.backgroundImage = page.ios ? "res://bg_login.jpg" : "res://bg_login";
   page.actionBarHidden = true;
+  user.set("isLoggingIn", true);
   page.bindingContext = user;
 };
 
@@ -22,7 +22,7 @@ exports.submit = function() {
     return;
   }
 
-  if (isLoggingIn) {
+  if (user.isLoggingIn) {
     login();
   } else {
     signUp();
@@ -63,11 +63,11 @@ function signUp() {
 }
 
 function toggleDisplay() {
-  isLoggingIn = !isLoggingIn;
+  user.set("isLoggingIn", !user.isLoggingIn);
   setTextFieldColors();
   var container = page.getViewById("container");
   container.animate({
-    backgroundColor: isLoggingIn ? new Color("white") : new Color("#301217"),
+    backgroundColor: user.isLoggingIn ? new Color("white") : new Color("#301217"),
     duration: 200
   });
 }
@@ -77,11 +77,11 @@ function setTextFieldColors() {
   var emailTextField = page.getViewById("email");
   var passwordTextField = page.getViewById("password");
 
-  var mainTextColor = new Color(isLoggingIn ? "black" : "#C4AFB4");
+  var mainTextColor = new Color(user.isLoggingIn ? "black" : "#C4AFB4");
   emailTextField.color = mainTextColor;
   passwordTextField.color = mainTextColor;
 
-  var hintColor = new Color(isLoggingIn ? "#ACA6A7" : "#C4AFB4");
+  var hintColor = new Color(user.isLoggingIn ? "#ACA6A7" : "#C4AFB4");
   setHintColor({ view: emailTextField, color: hintColor });
   setHintColor({ view: passwordTextField, color: hintColor });
 }
