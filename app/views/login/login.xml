@@ -1,7 +1,7 @@
 <Page loaded="loaded">
   <FlexboxLayout flexDirection="column" alignItems="center" justifyContent="center">
     <StackLayout id="container">
-      <Image src="res://logo_login" stretch="none" horizontalAlignment="center"></Image>
+      <Image src="res://logo_login" stretch="none" horizontalAlignment="center" class="m-t-5 m-b-20"></Image>
 
       <TextField id="email" text="{{ email }}" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
       <TextField id="password" secure="true" text="{{ password }}" hint="Password" />
